@@ -1,0 +1,4 @@
+spring.application.name=JournalApplication
+spring.data.mongodb.uri=your_mongodb_connection_string_here
+spring.data.mongodb.database=journal_db
+spring.data.mongodb.auto-index-creation=true
