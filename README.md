@@ -6,16 +6,14 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 
 ## 🚀 Features
 
-- Create journal entries  
-- Retrieve all journal entries  
-- Retrieve a journal entry by ID  
-- Update existing journal entries  
-- Delete journal entries  
-- Basic Authentication  
+- CRUD operations for journal entries
+- Basic Authentication for users
 - Role-Based Access Control (RBAC)
 - Cloud database integration (MongoDB Atlas) 
 - RESTful API design  
+- Logging and monitoring 
 - Clean layered architecture  
+- Profile-based configuration management
 
 ---
 
@@ -37,6 +35,7 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 - Spring Data JPA  
 - MongoDB Atlas  
 - Maven  
+- SLF4J / Logback
 
 ---
 
@@ -56,7 +55,8 @@ src
    │               ├── service
    │               └── JournalApplication.java
    └── resources
-       └── application.properties
+       ├── application.properties
+       └── logback.xml
 ```
 ---
 
@@ -66,7 +66,6 @@ src
 - OAuth2 authentication (Google Login)
 - Caching using Redis
 - JWT-based authentication
-- User registration and profile management
+- User registration
 - API documentation with Swagger
 - Deployment on Heroku
-- Logging and monitoring
