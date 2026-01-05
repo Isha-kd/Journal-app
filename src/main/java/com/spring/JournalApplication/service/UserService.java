@@ -3,6 +3,7 @@ package com.spring.JournalApplication.service;
 import com.spring.JournalApplication.entity.User;
 import com.spring.JournalApplication.repository.UserRepository;
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @Component
 public class UserService {
 
@@ -22,6 +24,7 @@ public class UserService {
 
     public void saveUser(User user) {
         userRepository.save(user);
+        log.info("User details updated.");
     }
 
     public void saveUser(User user, boolean encodePassword) {
@@ -30,6 +33,7 @@ public class UserService {
         }
         user.setRoles(Arrays.asList("USER"));
         userRepository.save(user);
+        log.info("User {} saved", user.getUsername());
     }
 
     public void saveAdmin(User user, boolean encodePassword) {
@@ -38,6 +42,7 @@ public class UserService {
         }
         user.setRoles(Arrays.asList("USER", "ADMIN"));
         userRepository.save(user);
+        log.info("New Admin {} saved", user.getUsername());
     }
 
     public List<User> getAll() {

@@ -3,6 +3,7 @@ package com.spring.JournalApplication.service;
 import com.spring.JournalApplication.entity.JournalEntry;
 import com.spring.JournalApplication.entity.User;
 import com.spring.JournalApplication.repository.JournalEntryRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -10,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Slf4j
 @Component
 public class JournalEntryService {
 
@@ -27,6 +29,7 @@ public class JournalEntryService {
             user.getJournal_entries().add(je);
             userService.saveUser(user);
         } catch (Exception e) {
+            log.error("Error saving journal entry for user {}: {}", username, e.getMessage());
             throw new RuntimeException("Something went wrong while saving the journal entry");
         }
     }
@@ -51,8 +54,12 @@ public class JournalEntryService {
             if(b) {
                 userService.saveUser(user);
                 journalEntryRepository.deleteById(id);
+                log.info("Journal entry with id {} was deleted", id);
+            } else {
+                log.warn("Journal entry with id {} not found for user {}", id, username);
             }
         } catch (Exception e) {
+            log.error("Error deleting journal entry with id {}: {}", id, e.getMessage());
             throw new RuntimeException("An error occurred while deleting the journal entry");
         }
     }
