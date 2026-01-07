@@ -14,6 +14,7 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 - Logging and monitoring 
 - Clean layered architecture  
 - Profile-based configuration management
+- Mail service for notifications and weekly reminders
 
 ---
 
@@ -36,6 +37,7 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 - MongoDB Atlas  
 - Maven  
 - SLF4J / Logback
+- Spring Mail
 
 ---
 
@@ -46,12 +48,13 @@ src
 ├── main
    ├── java
    │   └── com
-   │       └── example
+   │       └── spring
    │           └── JournalApplication
    │               ├── config
    │               ├── controller
    │               ├── entity
    │               ├── repository
+   │               ├── scheduler
    │               ├── service
    │               └── JournalApplication.java
    └── resources
@@ -62,7 +65,6 @@ src
 
 ## 📌 Planned Enhancements
 
-- Mail features
 - OAuth2 authentication (Google Login)
 - Caching using Redis
 - JWT-based authentication
