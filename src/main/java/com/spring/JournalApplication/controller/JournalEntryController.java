@@ -71,6 +71,7 @@ public class JournalEntryController {
         try {
             Authentication auth = SecurityContextHolder.getContext().getAuthentication();
             String username = auth.getName();
+            entry.setAuthor(username);
             entry.setDate(LocalDateTime.now());
             journalEntryService.saveEntry(entry, username);
             log.info("Journal entry with id {} created.", entry.getId());
