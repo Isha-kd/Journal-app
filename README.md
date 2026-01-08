@@ -11,10 +11,11 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 - Role-Based Access Control (RBAC)
 - Cloud database integration (MongoDB Atlas) 
 - RESTful API design  
-- Logging and monitoring 
+- Logging and monitoring (slf4j)
 - Clean layered architecture  
 - Profile-based configuration management
 - Mail service for notifications and weekly reminders
+- Cache (Redis) to fetch recent posts
 
 ---
 
@@ -38,6 +39,7 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 - Maven  
 - SLF4J / Logback
 - Spring Mail
+- Redis
 
 ---
 
@@ -66,7 +68,6 @@ src
 ## 📌 Planned Enhancements
 
 - OAuth2 authentication (Google Login)
-- Caching using Redis
 - JWT-based authentication
 - User registration
 - API documentation with Swagger
