@@ -7,7 +7,7 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 ## 🚀 Features
 
 - CRUD operations for journal entries
-- Basic Authentication for users
+- JWT Authentication for users
 - Role-Based Access Control (RBAC)
 - Cloud database integration (MongoDB Atlas) 
 - RESTful API design  
@@ -21,8 +21,8 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 
 ## 🔐 Security
 
-- **Basic Authentication**
-- **Role-Based Authorization**
+- **JWT Authentication**
+- **Role-Based JWT Authorization**
   - ADMIN and USER roles
   - Endpoint-level access control using Spring Security
 
@@ -40,6 +40,7 @@ A backend-only **Journal Application** built using **Spring Boot and Java**, pro
 - SLF4J / Logback
 - Spring Mail
 - Redis
+- JJWT (Java JWT)
 
 ---
 
@@ -54,10 +55,12 @@ src
    │           └── JournalApplication
    │               ├── config
    │               ├── controller
+   │               ├── dtos
    │               ├── entity
    │               ├── repository
    │               ├── scheduler
    │               ├── service
+   │               ├── utils
    │               └── JournalApplication.java
    └── resources
        ├── application.properties
@@ -68,7 +71,5 @@ src
 ## 📌 Planned Enhancements
 
 - OAuth2 authentication (Google Login)
-- JWT-based authentication
-- User registration
 - API documentation with Swagger
 - Deployment on Heroku
