@@ -1,6 +1,6 @@
 # 📓 Journal Application (Spring Boot Backend)
 
-A backend-only **Journal Application** built using **Spring Boot and Java**, providing secure RESTful APIs to manage personal journal entries. The current version of this application uses **MongoDB Atlas** for cloud based data storage and implements **Basic Authentication and Role-Based Authorization**, with plans to add **OAuth2 (Google login), caching, deployment, and more advanced features**.
+A backend-only **Journal Application** built using **Spring Boot and Java**, providing secure RESTful APIs to manage personal journal entries. The current version of this application uses **MongoDB Atlas** for cloud based data storage and implements **Basic Authentication and Role-Based Authorization**.
 
 ---
 
